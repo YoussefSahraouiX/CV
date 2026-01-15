@@ -96,3 +96,74 @@ footer {
   color: #6b7280;
   text-align: center;
 }
+/* Nom */
+.name {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #020617, #334155);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Titre */
+.title {
+  margin-top: 10px;
+  font-size: 1.3rem;
+  color: #475569;
+}
+
+/* Liens */
+.links {
+  margin-top: 18px;
+}
+
+.links a {
+  margin-right: 15px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #0f172a;
+  position: relative;
+}
+
+.links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #0f172a;
+  transition: width 0.3s ease;
+}
+
+.links a:hover::after {
+  width: 100%;
+}
+
+/* Background animé */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    #0f172a,
+    #1e293b,
+    #020617
+  );
+  background-size: 300% 300%;
+  animation: gradientMove 15s ease infinite;
+  z-index: -2;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Carte au-dessus du background */
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+}
